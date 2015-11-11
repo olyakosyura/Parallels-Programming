@@ -1,0 +1,12 @@
+#include "print.h"
+int main (void)
+{
+	print_graph ();
+	massiv a[5][5];
+	massiv b[5][5];
+	massiv c[5][5];
+	massiv d[5][5];
+	massiv e[5][5];
+	
+}
+
