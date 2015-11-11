@@ -1,4 +1,6 @@
 #include "print.h"
+#include <stdio.h>
+
 int main (void)
 {
 	print_graph ();
@@ -8,14 +10,49 @@ int main (void)
 
 int transport(void)
 {
-	int ssize=4;
+	int ssize=6;
 	
 	int dsize=3;
 	printf("\n Ssize = %d; Dsize = %d", ssize, dsize);
-	int* destination[dsize] = (20,20,20);	
-	int* sourses[ssize] = (10,20,10,20);
-	int* prices[ssize][dsize] = (1,2,3,4;2,3,4,5;3,4,5,6);
+	int destination[dsize];
+	int i;
+	int j;
+	for(i=0; i<dsize; i++){destination[i]=20;}	
+	
+	int sourses[ssize];
 
-	printf(destination);
+	for(i=0; i<ssize; i++){sourses[i]=10;}
+	int prices[ssize][dsize];
+
+
+	for(i=0; i<ssize; i++)  
+	{for (j=0; j<dsize;j++)	{
+		printf("a[%d,%d] = ", i,j);
+     		scanf("%d", &prices[i][j]); // &a[i] - адрес i-го элемента массива
+    		}
+	}
+
+	printf("\n Destinations: \n");
+	for(i=0;i<dsize;i++)  
+	{     	
+		printf("%d ",destination[i]); // пробел в формате печати обязателен
+    	}
+
+	printf("\n sourses: \n");
+	for(i=0;i<ssize;i++)  
+	{     	
+		printf("%d ",sourses[i]); // пробел в формате печати обязателен
+    	}
+	
+	printf("\n Matrix: \n");
+	for(i=0; i<ssize; i++)  
+	{for (j=0; j<dsize;j++)	{
+		printf("%d ", prices[i][j]);
+     		}
+	printf("\n")
+	}
+
+
+		
 }
 
