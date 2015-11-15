@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void print_DandS(int destination[], int sourses[],int ssize, int dsize)
 
@@ -39,12 +40,13 @@ int output(int  towns_count, int  products_count)
 
 }
 
-int input(int * towns_count, int * products_count)
+int inputTP(int * towns_count, int * products_count)
 {
 	FILE *file; 
 	char *fname = "data";
 	file = fopen(fname,"r");
-	
+	int i;
+
 	
 	if(file == NULL)
 	{
@@ -52,8 +54,46 @@ int input(int * towns_count, int * products_count)
 		return 0;
 	}
 
-	char *temp;
-	fscanf(file,"%d\n%d",towns_count,products_count);
+	fscanf(file,"%d\n%d\n",towns_count,products_count);
+	fclose(file);
+
+
+}
+
+
+
+int input(int * towns_count, int * products_count, int * products[*products_count][*towns_count], int * graph[*towns_count][*towns_count])
+{
+	FILE *file; 
+	char *fname = "data";
+	file = fopen(fname,"r");
+	int i;
+
+	
+	if(file == NULL)
+	{
+		printf("не могу открыть файл '%s'",fname);
+		return 0;
+	}
+
+	
+	fscanf(file,"%d\n%d\n",towns_count,products_count);
+	
+	int j;
+	for(i = 0; i<*products_count; i++)
+	{
+		for(j = 0; j<*towns_count; j++)
+		{
+			fscanf(file,"%d", products[i][j]);
+		}
+	}
+	for(i = 0; i<*towns_count; i++)
+	{
+		for(j = 0; j<*towns_count;j++)
+		{
+			fscanf(file,"%d", graph[i][j]);
+		}
+	}
 	fclose(file);
 
 

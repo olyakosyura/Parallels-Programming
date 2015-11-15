@@ -5,12 +5,17 @@
 int main (void)
 {
 	int towns_count, products_count;
-	input(&towns_count, &products_count);
-	transport();
+	inputTP(&towns_count, &products_count);
+	int graph[towns_count][towns_count];
+	int products[products_count][towns_count];
+	input(&towns_count, &products_count, &products , &graph);
+	
+	
+	transport(towns_count, products_count);
 	output(towns_count, products_count);	
 }
 
-int transport(void)
+int transport(int towns_count, int products_count)
 {
 	int dsize;
 	int ssize;

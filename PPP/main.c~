@@ -5,12 +5,17 @@
 int main (void)
 {
 	int towns_count, products_count;
-	input(&towns_count, &products_count);
-	transport();
+	inputTP(&towns_count, &products_count);
+	int graph[towns_count][towns_count];
+	int products[products_count][towns_count];
+	input(&towns_count, &products_count, &products , &graph);
+	
+	
+	transport(towns_count, products_count);
 	output(towns_count, products_count);	
 }
 
-int transport(void)
+int transport(int towns_count, int products_count)
 {
 	int dsize;
 	int ssize;
@@ -22,25 +27,6 @@ int transport(void)
 	print_DandS(destination,sourses,ssize,dsize);	
 }
 
-int input(int * towns_count, int * products_count)
-{
-	FILE *file; 
-	char *fname = "data";
-	file = fopen(fname,"r");
-	
-	
-	if(file == NULL)
-	{
-		printf("не могу открыть файл '%s'",fname);
-		return 0;
-	}
-
-	char *temp;
-	fscanf(file,"%d\n%d",towns_count,products_count);
-	fclose(file);
-
-
-}
 
 
 int input_data(int destination[], int sourses[], int ssize, int dsize)
