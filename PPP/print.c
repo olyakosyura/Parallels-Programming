@@ -17,7 +17,6 @@ void print_DandS(int destination[], int sourses[],int ssize, int dsize)
 		printf("%d ",sourses[i]); // пробел в формате печати обязателен
     	}
 	
-	printf("meow");
 }
 
 
