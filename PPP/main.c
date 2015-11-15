@@ -4,11 +4,11 @@
 int main (void)
 {
 	int s,d;
-	input_sd(s,d);
+	
 	
 	int ssize=3;
 	int dsize=6;
-
+	input_sd(ssize,dsize);
 	int destination[dsize];
 	int sourses[ssize];
 	int prices[ssize][dsize];
@@ -28,11 +28,12 @@ int transport(void)
 		
 }
 
-int input_sd(int s, int d)
+int input_sd(int towns_count, int products_count)
 {
 	FILE *file; 
-	char *fname = "data";
+	char *fname = "/home/kosyura/Parallels-Programming/PPP/data";
 	file = fopen(fname,"r");
+	
 
 	if(file == NULL)
 	{
@@ -40,7 +41,14 @@ int input_sd(int s, int d)
 		return 0;
 	}
 
-	
+	char *temp;
+	fgets(temp,sizeof(temp),file);
+	towns_count=atoi(temp);
+	printf("%d ",towns_count);
+
+	fgets(temp,sizeof(temp),file);
+	products_count=atoi(temp);
+	printf("%d ",products_count);
 	fclose(file);
 }
 

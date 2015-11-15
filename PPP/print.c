@@ -8,13 +8,13 @@ void print_DandS(int destination[], int sourses[],int ssize, int dsize)
 	printf("\n Destinations: \n");
 	for(i=0;i<dsize;i++)  
 	{     	
-		printf("%d ",destination[i]); // пробел в формате печати обязателен
+		printf("%d ",destination[i]); 
     	}
 
 	printf("\n sourses: \n");
 	for(i=0;i<ssize;i++)  
 	{     	
-		printf("%d ",sourses[i]); // пробел в формате печати обязателен
+		printf("%d ",sourses[i]);
     	}
 	
 }
