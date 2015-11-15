@@ -3,56 +3,56 @@
 
 int main (void)
 {
-	print_graph ();
+	int ssize=6;
+	int dsize=3;
+	int destination[dsize];
+	int sourses[ssize];
+	int prices[ssize][dsize];
+
+
 	transport();
+	input_data(destination,sourses,ssize,dsize);	
+	
+	print_DandS(destination,sourses,ssize,dsize);
+	
 	
 }
 
 int transport(void)
 {
-	int ssize=6;
 	
-	int dsize=3;
+		
+}
+
+int input_data(int destination[], int sourses[],int ssize, int dsize)
+{
+	
 	printf("\n Ssize = %d; Dsize = %d", ssize, dsize);
-	int destination[dsize];
 	int i;
 	int j;
 	for(i=0; i<dsize; i++){destination[i]=20;}	
 	
-	int sourses[ssize];
-
+	
 	for(i=0; i<ssize; i++){sourses[i]=10;}
-	int prices[ssize][dsize];
-
+	
 
 	for(i=0; i<ssize; i++)  
 	{for (j=0; j<dsize;j++)	{
 		printf("a[%d,%d] = ", i,j);
-     		scanf("%d", &prices[i][j]); // &a[i] - адрес i-го элемента массива
+     		//scanf("%d", &prices[i][j]); // &a[i] - адрес i-го элемента массива
     		}
 	}
 
-	printf("\n Destinations: \n");
-	for(i=0;i<dsize;i++)  
-	{     	
-		printf("%d ",destination[i]); // пробел в формате печати обязателен
-    	}
-
-	printf("\n sourses: \n");
-	for(i=0;i<ssize;i++)  
-	{     	
-		printf("%d ",sourses[i]); // пробел в формате печати обязателен
-    	}
 	
-	printf("\n Matrix: \n");
+	/*printf("\n Matrix: \n");
 	for(i=0; i<ssize; i++)  
 	{for (j=0; j<dsize;j++)	{
 		printf("%d ", prices[i][j]);
      		}
 	printf("\n");
-	}
+	}*/
 
 
-		
+
 }
 
