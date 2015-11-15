@@ -3,8 +3,12 @@
 
 int main (void)
 {
-	int ssize=6;
-	int dsize=3;
+	
+	input_sd(s,d);
+
+	int ssize=3;
+	int dsize=6;
+
 	int destination[dsize];
 	int sourses[ssize];
 	int prices[ssize][dsize];
@@ -13,7 +17,7 @@ int main (void)
 	transport();
 	input_data(destination,sourses,ssize,dsize);	
 	
-	print_graph (destination,sourses,ssize,dsize);
+	print_DandS(destination,sourses,ssize,dsize);
 	
 	
 }
@@ -24,10 +28,12 @@ int transport(void)
 		
 }
 
-int input_data(int destination[], int sourses[],int ssize, int dsize)
+int input_sd(int s, int d){}
+
+int input_data(int destination[], int sourses[], int ssize, int dsize)
 {
 	
-	printf("\n Ssize = %d; Dsize = %d", ssize, dsize);
+	printf("\n Ssize = %d; Dsize = %d \n", ssize, dsize);
 	int i;
 	int j;
 	for(i=0; i<dsize; i++){destination[i]=20;}	
@@ -55,4 +61,6 @@ int input_data(int destination[], int sourses[],int ssize, int dsize)
 
 
 }
+
+
 
