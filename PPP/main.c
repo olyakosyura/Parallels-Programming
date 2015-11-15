@@ -1,17 +1,12 @@
 #include "print.h"
 #include <stdio.h>
+    
 
 int main (void)
 {
-	int s,d;
-	
-	
-	int ssize=3;
-	int dsize=6;
-	input_sd(ssize,dsize);
-	int destination[dsize];
-	int sourses[ssize];
-	int prices[ssize][dsize];
+	int towns_count, products_count;
+	input_sd(&towns_count, &products_count);
+
 
 
 	transport();
@@ -24,17 +19,21 @@ int main (void)
 
 int transport(void)
 {
-	
+	int dsize;
+	int ssize;
+	int destination[dsize];
+	int sourses[ssize];
+	int prices[ssize][dsize];	
 		
 }
 
-int input_sd(int towns_count, int products_count)
+int input_sd(int * towns_count, int * products_count)
 {
 	FILE *file; 
-	char *fname = "/home/kosyura/Parallels-Programming/PPP/data";
+	char *fname = "data";
 	file = fopen(fname,"r");
 	
-
+	
 	if(file == NULL)
 	{
 		printf("не могу открыть файл '%s'",fname);
@@ -42,13 +41,7 @@ int input_sd(int towns_count, int products_count)
 	}
 
 	char *temp;
-	fgets(temp,sizeof(temp),file);
-	towns_count=atoi(temp);
-	printf("%d ",towns_count);
-
-	fgets(temp,sizeof(temp),file);
-	products_count=atoi(temp);
-	printf("%d ",products_count);
+	fscanf(file,"%d\n%d",towns_count,products_count);
 	fclose(file);
 }
 
