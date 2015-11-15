@@ -5,7 +5,7 @@ int main (void)
 {
 	int s,d;
 	input_sd(s,d);
-
+	
 	int ssize=3;
 	int dsize=6;
 
@@ -28,7 +28,21 @@ int transport(void)
 		
 }
 
-int input_sd(int s, int d){}
+int input_sd(int s, int d)
+{
+	FILE *file; 
+	char *fname = "data";
+	file = fopen(fname,"r");
+
+	if(file == NULL)
+	{
+		printf("не могу открыть файл '%s'",fname);
+		return 0;
+	}
+
+	
+	fclose(file);
+}
 
 int input_data(int destination[], int sourses[], int ssize, int dsize)
 {

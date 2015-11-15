@@ -3,7 +3,7 @@
 
 int main (void)
 {
-	
+	int s,d;
 	input_sd(s,d);
 
 	int ssize=3;
