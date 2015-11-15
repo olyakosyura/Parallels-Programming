@@ -1,15 +1,18 @@
 # Makefile for Hello World project
 
-hello: main.o task.o
-	gcc -o hello main.o task.o
+hello: main.o print.o
+	gcc -o task main.o print.o input.o
 
 main.o: main.c
 	gcc -c main.c
 
-hello.o: task.c
-	gcc -c task.c
+print.o: print.c
+	gcc -c print.c
+
+input.o: input.c
+	gcc -c input.c
 
 clean:
-	rm -f *.o hello
+	rm -f *.o task
 
 

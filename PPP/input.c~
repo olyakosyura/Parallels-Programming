@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+int input(int * towns_count, int * products_count)
+{
+	FILE *file; 
+	char *fname = "data";
+	file = fopen(fname,"r");
+	
+	
+	if(file == NULL)
+	{
+		printf("не могу открыть файл '%s'",fname);
+		return 0;
+	}
+
+	char *temp;
+	fscanf(file,"%d\n%d",towns_count,products_count);
+	fclose(file);
+}
+

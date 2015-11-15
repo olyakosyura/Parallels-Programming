@@ -5,16 +5,9 @@
 int main (void)
 {
 	int towns_count, products_count;
-	input_sd(&towns_count, &products_count);
-
-
-
+	input(&towns_count, &products_count);
 	transport();
-	input_data(destination,sourses,ssize,dsize);	
-	
-	print_DandS(destination,sourses,ssize,dsize);
-	
-	
+	output(towns_count, products_count);	
 }
 
 int transport(void)
@@ -24,26 +17,12 @@ int transport(void)
 	int destination[dsize];
 	int sourses[ssize];
 	int prices[ssize][dsize];	
-		
+	input_data(destination,sourses,ssize,dsize);	
+
+	print_DandS(destination,sourses,ssize,dsize);	
 }
 
-int input_sd(int * towns_count, int * products_count)
-{
-	FILE *file; 
-	char *fname = "data";
-	file = fopen(fname,"r");
-	
-	
-	if(file == NULL)
-	{
-		printf("не могу открыть файл '%s'",fname);
-		return 0;
-	}
 
-	char *temp;
-	fscanf(file,"%d\n%d",towns_count,products_count);
-	fclose(file);
-}
 
 int input_data(int destination[], int sourses[], int ssize, int dsize)
 {
